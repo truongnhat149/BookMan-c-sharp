@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Framework;
+using System;
 namespace BookMan.ConsoleApp.Views
 {
-    using Framework;
     using Models;
-    class BookUpdateView
+    internal class BookUpdateView
     {
         protected Book Model;
         public BookUpdateView(Book model)
@@ -12,23 +12,18 @@ namespace BookMan.ConsoleApp.Views
         }
         public void Render()
         {
-            ViewHelp.WriteLine("UPDATE BOOK INFORMATION", ConsoleColor.Green);
-            ConsoleColor labelColor = ConsoleColor.Magenta; ConsoleColor valueColor = ConsoleColor.White;
-
-            // hiển thị giá trị cũ
-            ViewHelp.Write("Authors: ", labelColor);
-            ViewHelp.WriteLine(Model.Authors, valueColor);
-
-            // yêu cầu nhập giá trị mới
-            ViewHelp.Write("New Value", labelColor);
-            // đọc giá trị mới 
-            var str = Console.ReadLine();
-            /* nếu người dùng ấn enter luôn (bỏ qua nhập dữ liệu) thì lấy lại giá trị cũ
-             * của trường Authors gán cho biến cục bộ authors.
-             * Nếu người dùng nhập giá trị mới thì biến cục bộ authors nhận giá trị này.
-             * Giá trị của biến authors về sau sẽ chuyển về controller để xử lý.
-             */
-            var authors = string.IsNullOrEmpty(str.Trim()) ? Model.Authors : str;
+            ViewHelp.WriteLine("UPDATE BOOK INFORMATION", ConsoleColor.Green); //sử dụng phương thức static
+            var authors = ViewHelp.InputString("Authors", Model.Authors);
+            var title = ViewHelp.InputString("Title", Model.Title);
+            var publisher = ViewHelp.InputString("Publisher", Model.Publisher);
+            var isbn = ViewHelp.InputString("Isbn", Model.Isbn);
+            var tags = ViewHelp.InputString("Tags", Model.Tags);
+            var description = ViewHelp.InputString("Description", Model.Description);
+            var file = ViewHelp.InputString("File", Model.File);
+            var year = ViewHelp.InputInt("Year", Model.Year);
+            var edition = ViewHelp.InputInt("Edition", Model.Edition);
+            var rating = ViewHelp.InputInt("Rate", Model.Rating);
+            var reading = ViewHelp.InputBool("Reading", Model.Reading);
         }
     }
 }

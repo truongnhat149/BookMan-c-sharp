@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace Framework
             if (resetColor)
                 Console.ResetColor();
         }
+
         /// <summary>
         /// xuất thông tin ra console với màu sắc (Write có màu)
         /// </summary>
@@ -34,7 +36,6 @@ namespace Framework
             if (resetColor)
                 Console.ResetColor();
         }
-
 
         /// <summary>
         /// in ra thông báo và tiếp nhận chuỗi ký tự người dùng nhập
@@ -53,6 +54,19 @@ namespace Framework
                 true : false; //chuyển sang kiểu bool dùng biểu thức điều kiện
             return @char; // lưu ý cách viết tên biến @char
         }
+
+        public static bool InputBool(string label, bool oldValue, ConsoleColor labelColor = ConsoleColor.Magenta, ConsoleColor valueColor = ConsoleColor.White)
+        {
+            Write($"{label}", labelColor);
+            // sử dụng phương thức mở rộng ToString
+            WriteLine(oldValue.ToString("y/n"), ConsoleColor.Yellow);
+            Write("New value >>" , ConsoleColor.Green);
+            Console.ForegroundColor = valueColor;
+            string str = Console.ReadLine();
+            if (string.IsNullOrEmpty(str)) return oldValue;
+            return str.ToBool(); // sử dụng phương thức mở rộng ToBool
+        }
+
         /// <summary>
         /// in ra thông báo và tiếp nhận chuỗi ký tự người dùng nhập
         /// rồi chuyển sang số nguyên
@@ -73,6 +87,19 @@ namespace Framework
                 }
             }
         }
+
+        public static int InputInt(string label, int oldValue, ConsoleColor labelColor = ConsoleColor.Magenta, ConsoleColor valueColor = ConsoleColor.White)
+        {
+            Write($"{label}: ", labelColor);
+            WriteLine($"{oldValue} ", ConsoleColor.Yellow);
+            Write("New Value >> ", ConsoleColor.Green);
+            Console.ForegroundColor = valueColor;
+            string str = Console.ReadLine();
+            if (string.IsNullOrEmpty(str)) return oldValue;
+            if (str.ToInt(out int i)) return i;
+            return oldValue;
+        }
+
         /// <summary>
         /// in ra thông báo và tiếp nhận chuỗi ký tự người dùng nhập
         /// </summary>
@@ -88,5 +115,15 @@ namespace Framework
             Console.ResetColor();
             return value;
         }
+
+        public static string InputString(string label, string oldValue, ConsoleColor labelColor = ConsoleColor.Magenta, ConsoleColor valueColor = ConsoleColor.White) 
+        {
+            Write($"{label}", labelColor);
+            WriteLine(oldValue, ConsoleColor.Yellow);
+            Write("New Value >> ", ConsoleColor.Green);
+            Console.ForegroundColor = valueColor;
+            string newValue = Console.ReadLine();
+            return string.IsNullOrEmpty(newValue.Trim()) ? oldValue : newValue;
+        } 
     }
 }

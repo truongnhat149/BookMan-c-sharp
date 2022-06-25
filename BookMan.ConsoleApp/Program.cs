@@ -28,6 +28,9 @@ namespace BookMan.ConsoleApp
                     case "update":
                         controller.Update();
                         break;
+                    case "list":
+                        controller.List();
+                        break;
                     default:
                         Console.WriteLine("Unknown command!!!");
                         flag = false;
