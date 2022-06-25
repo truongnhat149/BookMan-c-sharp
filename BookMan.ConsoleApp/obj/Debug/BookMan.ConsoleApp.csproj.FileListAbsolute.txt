@@ -1,0 +1,8 @@
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Debug\BookMan.ConsoleApp.exe.config
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Debug\BookMan.ConsoleApp.exe
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Debug\BookMan.ConsoleApp.pdb
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csproj.AssemblyReference.cache
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csproj.SuggestedBindingRedirects.cache
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csproj.CoreCompileInputs.cache
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.exe
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.pdb
