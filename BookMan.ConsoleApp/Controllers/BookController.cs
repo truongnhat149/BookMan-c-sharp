@@ -37,5 +37,17 @@ namespace BookMan.ConsoleApp.Controllers
             view.Render();
         }
 
+        public void Create()
+        {
+            BookCreateView view = new BookCreateView();
+            view.Render();
+        }
+
+        public void Update()
+        {
+            var model = new Book();
+            var view = new BookUpdateView(model);
+            view.Render();
+        }
     }
 }
