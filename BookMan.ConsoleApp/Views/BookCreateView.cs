@@ -5,12 +5,10 @@ namespace BookMan.ConsoleApp.Views
     /// <summary>
     /// class để thêm một cuốn sách mới
     /// </summary>
-    internal class BookCreateView
+    internal class BookCreateView : ViewBase
     {
-        public BookCreateView()
-        {
+        public BookCreateView()  { }
 
-        }
         /// <summary>
         /// yêu cầu người dùng nhập từng thông tin và lưu lại thông tin đó
         /// </summary>

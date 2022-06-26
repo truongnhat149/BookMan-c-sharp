@@ -8,36 +8,25 @@ using System.Threading.Tasks;
 namespace BookMan.ConsoleApp.Views
 {
     using Models;
-    class BookListView
+    internal class BookListView : ViewBase
     {
-        protected Book[] Model;
-
-        public BookListView(Book[] model)
-        {
-            Model = model;
-        }
-
+        public BookListView(Book[] model) : base(model) { }
+        
         public void Render()
         {
-            if (Model.Length == 0)
+            if (((Book[])Model).Length == 0)
             {
                 ViewHelp.WriteLine("No book found", ConsoleColor.Yellow);
                 return;
             }
+
             ViewHelp.WriteLine("THE BOOK LIST", ConsoleColor.Green);
-            foreach (Book b in Model)
+            foreach (Book b in Model as Book[])
             {
                 ViewHelp.Write($"[{b.Id}]", ConsoleColor.Yellow);
                 ViewHelp.WriteLine($" {b.Title}", b.Reading ? ConsoleColor.Cyan : ConsoleColor.White);
             }
         }
 
-        public void RenderToFile(string path)
-        {
-            ViewHelp.WriteLine($"Saving data to File '{path}'");
-            var json = Newtonsoft.Json.JsonConvert.SerializeObject(Model);
-            System.IO.File.WriteAllText(path, json);
-            ViewHelp.WriteLine("Done!!!");
-        }
     }
 }
