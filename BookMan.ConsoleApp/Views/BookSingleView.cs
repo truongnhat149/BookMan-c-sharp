@@ -48,11 +48,12 @@ namespace BookMan.ConsoleApp.Views // chú ý cách Visual Studio đặt tên na
             Console.WriteLine($"File Name:   {Model.FileName}");
         }
 
-        /// <summary>
-        /// in thông báo ra màn hình console với chữ màu
-        /// </summary>
-        /// <param name="message">thông báo</param>
-        /// <param name="color">màu</param>
-       
+        public void RenderToFile(string path)
+        {
+            ViewHelp.WriteLine($"Saving data to file '{path}'");
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(Model);
+            System.IO.File.WriteAllText(path, json);
+            ViewHelp.WriteLine("Done!!!");
+        }
     }
 }

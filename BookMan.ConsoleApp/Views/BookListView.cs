@@ -31,5 +31,13 @@ namespace BookMan.ConsoleApp.Views
                 ViewHelp.WriteLine($" {b.Title}", b.Reading ? ConsoleColor.Cyan : ConsoleColor.White);
             }
         }
+
+        public void RenderToFile(string path)
+        {
+            ViewHelp.WriteLine($"Saving data to File '{path}'");
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(Model);
+            System.IO.File.WriteAllText(path, json);
+            ViewHelp.WriteLine("Done!!!");
+        }
     }
 }

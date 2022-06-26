@@ -22,12 +22,14 @@ namespace BookMan.ConsoleApp.Controllers
         /// ghép nối dữ liệu 1 cuốn sách với giao diện hiển thị 1 cuốn sách
         /// </summary>
         /// <param name="id">mã định danh của cuốn sách</param>
-        public void Single(int id)
+        public void Single(int id, string path = "")
         {
             // lấy dữ liệu qua repo
             var model = Repo.Select(id);
             // khởi tạo view
             BookSingleView view = new BookSingleView(model);
+
+            if (!string.IsNullOrEmpty(path)) { view.RenderToFile(path); return; }
             // gọi phương thức Render để thực sự hiển thị ra màn hình
             view.Render();
         }
@@ -35,10 +37,11 @@ namespace BookMan.ConsoleApp.Controllers
         /// <summary>
         /// kích hoạt chức năng hiển thị danh sách
         /// </summary>
-        public void List()
+        public void List(string path = "")
         {
             var model = Repo.Select();         
             BookListView view = new BookListView(model);
+            if (!string.IsNullOrEmpty(path)) { view.RenderToFile(path); return; }
             view.Render();
         }
 
