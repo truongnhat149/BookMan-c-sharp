@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace BookMan.ConsoleApp.Controllers
 {
+    using DataServices;
     using Models; //lưu ý cách dùng using với không gian tên con
     using Views;
     /// <summary>
@@ -12,25 +13,19 @@ namespace BookMan.ConsoleApp.Controllers
     /// </summary>
     internal class BookController
     {
+        protected Repository Repo;
+        public BookController(SimpleDataAccess _context)
+        {
+            Repo = new Repository(_context);
+        }
         /// <summary>
         /// ghép nối dữ liệu 1 cuốn sách với giao diện hiển thị 1 cuốn sách
         /// </summary>
         /// <param name="id">mã định danh của cuốn sách</param>
         public void Single(int id)
         {
-            // khởi tạo object với property
-            Book model = new Book
-            {
-                Id = 1,
-                Authors = "Adam Freeman",
-                Title = "Expert ASP.NET Web API 2 for MVC Developers (The Expert's Voice in .NET)",
-                Publisher = "Apress",
-                Year = 2014,
-                Tags = "c#, asp.net, mvc",
-                Description = "Expert insight and understanding of how to create, customize, and deploy complex, flexible, and robust HTTP web services",
-                Rating = 5,
-                Reading = true
-            };
+            // lấy dữ liệu qua repo
+            var model = Repo.Select(id);
             // khởi tạo view
             BookSingleView view = new BookSingleView(model);
             // gọi phương thức Render để thực sự hiển thị ra màn hình
@@ -42,21 +37,7 @@ namespace BookMan.ConsoleApp.Controllers
         /// </summary>
         public void List()
         {
-            /* khai báo và khởi tạo một mảng, mỗi phần tử thuộc kiểu Book.
-            * Lệnh dưới dây khai báo và khởi tạo 1 mảng gồm 6 phần tử,
-            * mỗi phần tử thuộc kiểu Book.
-            * Do Book là class, mỗi phần tử của mảng cũng phải được khởi tạo
-            * sử dụng từ khóa new, tương tự như khởi tạo một object bình thường
-            */
-            Book[] model = new Book[]
-            {
-                new Book{Id=1, Title = "A new book 1"},
-                new Book{Id=2, Title = "A new book 2"},
-                new Book{Id=3, Title = "A new book 3"},
-                new Book{Id=4, Title = "A new book 4"},
-                new Book{Id=5, Title = "A new book 5"},
-                new Book{Id=6, Title = "A new book 6"},
-            };
+            var model = Repo.Select();         
             BookListView view = new BookListView(model);
             view.Render();
         }
@@ -67,9 +48,9 @@ namespace BookMan.ConsoleApp.Controllers
             view.Render();
         }
 
-        public void Update()
+        public void Update(int id)
         {
-            var model = new Book();
+            var model = Repo.Select(id);
             var view = new BookUpdateView(model);
             view.Render();
         }

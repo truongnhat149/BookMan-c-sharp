@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace BookMan.ConsoleApp
 {
     using Controllers;
+    using DataServices;
     internal class Program
     {
         static void Main(string[] args)
         {
-            BookController controller = new BookController();
+            SimpleDataAccess context = new SimpleDataAccess();
+            BookController controller = new BookController(context);
             bool flag = true; 
             while (flag)
             {
