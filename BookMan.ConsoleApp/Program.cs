@@ -17,10 +17,29 @@ namespace BookMan.ConsoleApp
             var context = new SimpleDataAccess();
             BookController controller = new BookController(context);
 
-            Router.Instance.Register("about", About);
-            Router.Instance.Register("help", Help);
+            Router route = Router.Instance;
 
-            while(true)
+            route.Register("about", About);
+            route.Register("help", Help);
+
+            route.Register(route: "create",
+                  action: p => controller.Create(),
+                  help: "[create]\r\n nhập sách mới");
+
+            route.Register(route: "update",
+                action: p => controller.Update(p["id"].ToInt()),
+                help: "(update ? id = <value> \r\n tìm và cập nhật danh sách)");
+
+            route.Register(route: "single",
+                    action: p => controller.Single(p["id"].ToInt()),
+                    help: "(single ? id = <value> \r\n hiển thị một cuốn sách theo id)"
+                );
+
+            route.Register(route: "list",
+                    action: p => controller.List(),
+                    help: "[list] \r hiển thị danh sách");
+
+            while (true)
             {
                 ViewHelp.Write("# Request >>> ", ConsoleColor.Green);
                 string request = Console.ReadLine();
