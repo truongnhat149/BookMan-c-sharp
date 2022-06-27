@@ -62,5 +62,57 @@ namespace BookMan.ConsoleApp.Controllers
             Repo.Update(id, book);
             Success("Book Updated!");
         }
+
+        public void Delete(int id, bool process = false)
+        {
+           
+            var b = Repo.Select(id);
+            Confirm($"Do you want to delete this book {b.Title} ?", $"do delete {b.Id}");
+
+            var confirm = Console.ReadLine();
+            if (confirm == "y" || confirm == "yes")
+            {
+                Repo.Delete(id);
+                Success("Book Deleted");
+            }
+            else
+            {
+                Error($"Error!!!");
+                ViewHelp.Write("# Request >>> ", ConsoleColor.Green);
+                string request = Console.ReadLine();
+
+                Router.Instance.Forward(request);
+            }
+        }
+
+        // filter name book
+        public void Filter(string key)
+        {
+            var model = Repo.Select(key);
+            if (model.Length == 0)
+                Inform("No matched book found");
+            else
+                Render(new BookListView(model));
+        }
+
+        // bookmarked
+        public void Mark(int id, bool read = true)
+        {
+            var book = Repo.Select(id);
+            if (book == null)
+            {
+                Error("Book not found");
+                return;
+            }
+            book.Reading = read;
+            Success($"The book '{book.Title}' are marked as {( read ? "READ" : "UNREAD")}");
+        }
+
+        public void ShowMarks()
+        {
+            var model = Repo.SelectMarked();
+            var view = new BookListView(model);
+            Render(view);
+        }
     }
 }

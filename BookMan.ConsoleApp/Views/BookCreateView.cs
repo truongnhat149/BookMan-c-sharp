@@ -33,7 +33,7 @@ namespace BookMan.ConsoleApp.Views
                 $"title = {title}" +
                 $"authors = {authors}" +
                 $"publisher = {publisher}" +
-                $"isbn = {isbn}" +
+                $"isbn = {isbn}"+
                 $"year = {year}" +
                 $"edition = {edition}" +
                 $"tags = {tags}" +

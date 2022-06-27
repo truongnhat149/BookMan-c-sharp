@@ -11,6 +11,7 @@
         {
             SimpleDataAccess dataAccess = new SimpleDataAccess();
             BookController controller = new BookController(dataAccess);
+            ShellController shellController = new ShellController(dataAccess);
 
             Router route = Router.Instance;
 
@@ -49,10 +50,54 @@
                     action: p => controller.Single(p["id"].ToInt(), p["path"]),
                     help: "[single file ? id = <value> & path = <value>]");
 
+            route.Register(route: "delete",
+                    action: p => controller.Delete(p["id"].ToInt()),
+                    help: "delete ? id = <value>");
+
+            route.Register(route : "do delete",
+                    action: p => controller.Delete(p["id"].ToInt(), true),
+                    help: "this route should be used only in code");
+
+            // filter key
+            route.Register(route: "filter",
+                    action: p => controller.Filter(p["key"]),
+                    help: "[filter ? key = <value>] tìm sách theo từ khóa");
+
+            // shell
+            route.Register(route: "add shell",
+                    action: p => shellController.Shell(p["path"], p["ext"]),
+                    help: "[add shell ? path = <value>]");
+
+            // read file
+            route.Register(route: "read",
+                    action: p => shellController.Read(p["id"].ToInt()),
+                    help:"[read ? id = <value>]");
+
+            // book marked
+            route.Register(route : "mark",
+                    action: p => controller.Mark(p["id"].ToInt()),
+                    help: "[mark ? id = <value>]");
+
+            route.Register(route: "unmark",
+                    action: p => controller.Mark(p["id"].ToInt(), false),
+                    help: "[unmark ? id = <value>]");
+
+            route.Register(route: "show mark",
+                    action: p => controller.ShowMarks(),
+                    help: "[show marks]");
+
+            // clear data
+            route.Register(route: "clear",
+                     action: p => shellController.Clear(),
+                     help: "[clear] Use with care");
+
+            route.Register(route: "do clear",
+                     action: p => shellController.Clear(true),
+                     help: "[clear] Use with care");
             // local function to convert parameter to book object
-            Models.Book toBook(Parameter parameter)
+            Book toBook(Parameter parameter)
             {
-                var b = new Models.Book();
+                var b = new Book();
                 if (parameter.ContainsKey("id")) b.Id = parameter["id"].ToInt();
                 if (parameter.ContainsKey("authors")) b.Authors = parameter["authors"];
                 if (parameter.ContainsKey("title")) b.Title = parameter["title"];

@@ -21,23 +21,7 @@ namespace BookMan.ConsoleApp.DataServices
             }
             return null;
         }
-        public Book[] Select(string key)
-        {
-            var temp = new List<Book>();
-            var k = key.ToLower();
-            foreach (var b in _context.Books)
-            {
-                var logic =
-                    b.Title.ToLower().Contains(k) ||
-                    b.Authors.ToLower().Contains(k) ||
-                    b.Publisher.ToLower().Contains(k) ||
-                    b.Tags.ToLower().Contains(k) ||
-                    b.Description.ToLower().Contains(k)
-                    ;
-                if (logic) temp.Add(b);
-            }
-            return temp.ToArray();
-        }
+       
         public void Insert(Book book)
         {
             var lastIndex = _context.Books.Count - 1;
@@ -68,6 +52,41 @@ namespace BookMan.ConsoleApp.DataServices
             b.Title = book.Title;
             b.Year = book.Year;
             return true;
+        }
+
+        public Book[] Select(string key)
+        {
+            var temp = new List<Book>();
+            var k = key.ToLower();
+            foreach (var b in _context.Books)
+            {
+                var logic =
+                    b.Title.ToLower().Contains(k) ||
+                    b.Authors.ToLower().Contains(k) ||
+                    b.Publisher.ToLower().Contains(k) ||
+                    b.Tags.ToLower().Contains(k) ||
+                    b.Description.ToLower().Contains(k)
+                    ;
+                if (logic) temp.Add(b);
+            }
+            return temp.ToArray();
+        }
+
+        // book marked
+        public Book[] SelectMarked()
+        {
+            var list = new List<Book>();
+            foreach(var b in Books)
+            {
+                if (b.Reading) list.Add(b);
+            }
+            return list.ToArray();
+        }
+
+        // clear data
+        public void Clear()
+        {
+            _context.Books.Clear();
         }
     }
 }

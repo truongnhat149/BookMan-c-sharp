@@ -49,7 +49,6 @@ namespace Framework
         {
             Write($"{label} [y/n]: ", labelColor);
             ConsoleKeyInfo key = Console.ReadKey(); //đọc 1 ký tự vào biến key
-            Console.WriteLine();
             bool @char = key.KeyChar == 'y' || key.KeyChar == 'Y' ?
                 true : false; //chuyển sang kiểu bool dùng biểu thức điều kiện
             return @char; // lưu ý cách viết tên biến @char
