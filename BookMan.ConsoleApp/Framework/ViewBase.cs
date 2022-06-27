@@ -5,16 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Framework
-{   
+{
     public class ViewBase
     {
-        protected object Model;
         protected Router router = Router.Instance;
         public ViewBase() { }
+        public virtual void Render() { }
+    }
+    public class ViewBase<T> : ViewBase 
+    {
+        protected T Model;
+        public ViewBase(T model) => Model = model;
 
-        public ViewBase(object model) => Model = model;
-
-        public void RenderToFile(string path)
+        public virtual void RenderToFile(string path)
         {
             ViewHelp.WriteLine($"Saving data to file '{path}'");
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(Model);

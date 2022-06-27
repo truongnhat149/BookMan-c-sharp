@@ -6,3 +6,6 @@ D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csp
 D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csproj.CoreCompileInputs.cache
 D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.exe
 D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.pdb
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Debug\Newtonsoft.Json.dll
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Debug\Newtonsoft.Json.xml
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csproj.CopyComplete

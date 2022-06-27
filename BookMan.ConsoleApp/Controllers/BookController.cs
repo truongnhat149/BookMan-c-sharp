@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 namespace BookMan.ConsoleApp.Controllers
 {
+    using Framework;
     using DataServices;
-    using Models; //lưu ý cách dùng using với không gian tên con
     using Views;
     /// <summary>
     /// lớp điều khiển, giúp ghép nối dữ liệu sách với giao diện
     /// </summary>
-    internal class BookController
+    internal class BookController : ControllerBase
     {
         protected Repository Repo;
         public BookController(SimpleDataAccess _context)
@@ -26,12 +26,8 @@ namespace BookMan.ConsoleApp.Controllers
         {
             // lấy dữ liệu qua repo
             var model = Repo.Select(id);
-            // khởi tạo view
-            BookSingleView view = new BookSingleView(model);
 
-            if (!string.IsNullOrEmpty(path)) { view.RenderToFile(path); return; }
-            // gọi phương thức Render để thực sự hiển thị ra màn hình
-            view.Render();
+            Render(new BookSingleView(model), path);
         }
 
         /// <summary>
@@ -40,22 +36,18 @@ namespace BookMan.ConsoleApp.Controllers
         public void List(string path = "")
         {
             var model = Repo.Select();         
-            BookListView view = new BookListView(model);
-            if (!string.IsNullOrEmpty(path)) { view.RenderToFile(path); return; }
-            view.Render();
+            Render(new BookListView(model), path);
         }
 
         public void Create()
         {
-            BookCreateView view = new BookCreateView();
-            view.Render();
+            Render(new BookCreateView());
         }
 
         public void Update(int id)
         {
             var model = Repo.Select(id);
-            var view = new BookUpdateView(model);
-            view.Render();
+            Render(new BookUpdateView(model));
         }
     }
 }
