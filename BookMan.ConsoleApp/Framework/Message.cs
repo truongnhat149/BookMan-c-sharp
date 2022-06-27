@@ -37,8 +37,8 @@ namespace Framework
             {
                 ViewHelp.Write(Model.Text, ConsoleColor.Magenta);
                 var answer = Console.ReadLine().ToLower();
-                //if (answer == "y" || answer == "yes")
-                //    Router.Forward(Model.BackRoute);
+                if (answer == "y" || answer == "yes")
+                    router.Forward(Model.BackRoute);
             }
         }
     }

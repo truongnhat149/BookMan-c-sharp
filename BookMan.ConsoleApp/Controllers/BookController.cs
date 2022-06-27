@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace BookMan.ConsoleApp.Controllers
 {
+    using Models;
     using Framework;
     using DataServices;
     using Views;
@@ -39,15 +40,27 @@ namespace BookMan.ConsoleApp.Controllers
             Render(new BookListView(model), path);
         }
 
-        public void Create()
+        public void Create(Book book = null)
         {
-            Render(new BookCreateView());
+            if (book == null)
+            {
+                Render(new BookCreateView());
+                return;
+            }
+            Repo.Insert(book);
+            Success("Book created");
         }
 
-        public void Update(int id)
+        public void Update(int id, Book book = null)
         {
-            var model = Repo.Select(id);
-            Render(new BookUpdateView(model));
+            if (book == null)
+            {
+                var model = Repo.Select(id);
+                Render(new BookUpdateView(model));
+                return;
+            }
+            Repo.Update(id, book);
+            Success("Book Updated!");
         }
     }
 }

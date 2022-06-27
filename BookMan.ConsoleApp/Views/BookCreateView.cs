@@ -2,6 +2,7 @@
 using Framework;
 namespace BookMan.ConsoleApp.Views
 {
+    using Framework;
     /// <summary>
     /// class để thêm một cuốn sách mới
     /// </summary>
@@ -18,6 +19,7 @@ namespace BookMan.ConsoleApp.Views
             var title = ViewHelp.InputString("Title"); //đọc vào biến title            
             var authors = ViewHelp.InputString("Authors"); //đọc vào biến authors            
             var publisher = ViewHelp.InputString("Publisher"); //đọc vào biến publisher
+            var isbn = ViewHelp.InputString("Isbn");
             var year = ViewHelp.InputInt("Year"); // nhập giá trị cho biến year
             var edition = ViewHelp.InputInt("Edition"); // nhập giá trị cho biến edition
             var tags = ViewHelp.InputString("Tags");
@@ -25,6 +27,21 @@ namespace BookMan.ConsoleApp.Views
             var rate = ViewHelp.InputInt("Rate");
             var reading = ViewHelp.InputBool("Reading");
             var file = ViewHelp.InputString("File");
+
+            var request =
+                "do create ? " +
+                $"title = {title}" +
+                $"authors = {authors}" +
+                $"publisher = {publisher}" +
+                $"isbn = {isbn}" +
+                $"year = {year}" +
+                $"edition = {edition}" +
+                $"tags = {tags}" +
+                $"description = {description}" +
+                $"rate = {rate}" +
+                $"reading = {reading}" +
+                $"file = {file}";
+            router.Forward(request);
         }
     }
 }

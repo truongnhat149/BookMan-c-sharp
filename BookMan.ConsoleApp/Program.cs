@@ -9,43 +9,12 @@ namespace BookMan.ConsoleApp
     using Framework;
     using Controllers;
     using DataServices;
-    internal class Program
+    internal partial class Program
     {
         private static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            var context = new SimpleDataAccess();
-            BookController controller = new BookController(context);
-
-            Router route = Router.Instance;
-
-            route.Register("about", About);
-            route.Register("help", Help);
-
-            route.Register(route: "create",
-                  action: p => controller.Create(),
-                  help: "[create]\r\n nhập sách mới");
-
-            route.Register(route: "update",
-                action: p => controller.Update(p["id"].ToInt()),
-                help: "(update ? id = <value> \r\n tìm và cập nhật danh sách)");
-
-            route.Register(route: "single",
-                    action: p => controller.Single(p["id"].ToInt()),
-                    help: "(single ? id = <value> \r\n hiển thị một cuốn sách theo id)"
-                );
-
-            route.Register(route: "list",
-                    action: p => controller.List(),
-                    help: "[list] \r hiển thị danh sách");
-
-            route.Register(route: "list file",
-                    action: p => controller.List(p["path"]),
-                    help: "[list file ? path = <value> \r hiển thị tất cả sách]");
-
-            route.Register(route: "single file",
-                    action: p => controller.Single(p["id"].ToInt(), p["path"]),
-                    help: "[single file ? id = <value> & path = <value>]");
+            ConfigRouter();
 
             while (true)
             {

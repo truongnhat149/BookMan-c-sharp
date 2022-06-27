@@ -21,6 +21,21 @@ namespace BookMan.ConsoleApp.Views
             var edition = ViewHelp.InputInt("Edition", model.Edition);
             var rating = ViewHelp.InputInt("Rate", model.Rating);
             var reading = ViewHelp.InputBool("Reading", model.Reading);
+
+            var request =
+               "do create ? " +
+               $"title = {title}" +
+               $"authors = {authors}" +
+               $"publisher = {publisher}" +
+               $"isbn = {isbn}" +
+               $"year = {year}" +
+               $"edition = {edition}" +
+               $"tags = {tags}" +
+               $"description = {description}" +
+               $"rate = {rating}" +
+               $"reading = {reading}" +
+               $"file = {file}";
+            router.Forward(request);
         }
     }
 }
