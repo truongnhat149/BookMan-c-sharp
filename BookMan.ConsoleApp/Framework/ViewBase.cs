@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Framework
 {
-    public class ViewBase
+    public abstract class ViewBase
     {
         protected Router router = Router.Instance;
         public ViewBase() { }
-        public virtual void Render() { }
+        public abstract void Render();
     }
-    public class ViewBase<T> : ViewBase 
+    public abstract class ViewBase<T> : ViewBase 
     {
         protected T Model;
         public ViewBase(T model) => Model = model;
