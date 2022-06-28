@@ -9,7 +9,7 @@
     {
         private static void ConfigRouter()
         {
-            BinaryDataAccess dataAccess = new BinaryDataAccess();
+            IDataAccess dataAccess = new BinaryDataAccess();
             BookController controller = new BookController(dataAccess);
             ShellController shellController = new ShellController(dataAccess);
 

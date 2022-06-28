@@ -15,7 +15,7 @@ namespace BookMan.ConsoleApp.Controllers
     internal class BookController : ControllerBase
     {
         protected Repository Repo;
-        public BookController(BinaryDataAccess _context)
+        public BookController(IDataAccess _context)
         {
             Repo = new Repository(_context);
         }

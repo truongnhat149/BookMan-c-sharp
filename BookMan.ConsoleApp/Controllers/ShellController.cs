@@ -10,7 +10,7 @@ namespace BookMan.ConsoleApp.Controllers
     internal class ShellController : ControllerBase
     {
         protected Repository Repo;
-        public ShellController(BinaryDataAccess context)
+        public ShellController(IDataAccess context)
         {
             Repo = new Repository(context);
         }

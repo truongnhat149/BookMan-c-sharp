@@ -2,7 +2,7 @@
 namespace BookMan.ConsoleApp.DataServices
 {
     using Models;
-    public class SimpleDataAcess
+    public class SimpleDataAcess : IDataAccess
     {
         public SimpleDataAcess()
         {

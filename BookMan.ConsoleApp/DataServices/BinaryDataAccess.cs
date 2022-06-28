@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace BookMan.ConsoleApp.DataServices
 {
     using Models;
-    public class BinaryDataAccess
+    public class BinaryDataAccess : IDataAccess
     {
         // read write file binary
         public List<Book> Books { get; set; } = new List<Book>();

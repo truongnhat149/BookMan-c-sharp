@@ -11,7 +11,7 @@ namespace BookMan.ConsoleApp.DataServices
     using System.Xml;
     using System.Xml.Serialization;
 
-    public class XmlDataAccess
+    public class XmlDataAccess : IDataAccess
     {
         public List<Book> Books { get; set; } = new List<Book>();
 
