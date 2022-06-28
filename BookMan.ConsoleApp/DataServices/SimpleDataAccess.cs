@@ -2,8 +2,12 @@
 namespace BookMan.ConsoleApp.DataServices
 {
     using Models;
-    public class SimpleDataAccess
+    public class SimpleDataAcess
     {
+        public SimpleDataAcess()
+        {
+        }
+
         public List<Book> Books { get; set; }
         public void Load()
         {

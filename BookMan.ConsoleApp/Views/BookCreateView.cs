@@ -25,8 +25,8 @@ namespace BookMan.ConsoleApp.Views
             var tags = ViewHelp.InputString("Tags");
             var description = ViewHelp.InputString("Description");
             var rate = ViewHelp.InputInt("Rate");
-            var reading = ViewHelp.InputBool("Reading");
             var file = ViewHelp.InputString("File");
+            var reading = ViewHelp.InputBool("Reading");
 
             var request =
                 "do create ? " +

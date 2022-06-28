@@ -10,7 +10,7 @@ namespace BookMan.ConsoleApp.Controllers
     internal class ShellController : ControllerBase
     {
         protected Repository Repo;
-        public ShellController(SimpleDataAccess context)
+        public ShellController(BinaryDataAccess context)
         {
             Repo = new Repository(context);
         }
@@ -55,6 +55,12 @@ namespace BookMan.ConsoleApp.Controllers
             }
             Process.Start(book.File);
             Success($"You are reading book '{book.Title}'");
+        }
+
+        public void Save()
+        {
+            Repo.SaveChanges();
+            Success("Data save!");
         }
 
         // clear data

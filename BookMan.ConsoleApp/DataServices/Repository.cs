@@ -4,8 +4,10 @@ namespace BookMan.ConsoleApp.DataServices
     using Models;
     public class Repository
     {
-        protected readonly SimpleDataAccess _context;
-        public Repository(SimpleDataAccess context)
+        //protected readonly SimpleDataAccess _context;
+
+        protected readonly BinaryDataAccess _context;
+        public Repository(BinaryDataAccess context)
         {
             _context = context;
             _context.Load();

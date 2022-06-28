@@ -9,7 +9,7 @@
     {
         private static void ConfigRouter()
         {
-            SimpleDataAccess dataAccess = new SimpleDataAccess();
+            BinaryDataAccess dataAccess = new BinaryDataAccess();
             BookController controller = new BookController(dataAccess);
             ShellController shellController = new ShellController(dataAccess);
 
@@ -67,6 +67,11 @@
             route.Register(route: "add shell",
                     action: p => shellController.Shell(p["path"], p["ext"]),
                     help: "[add shell ? path = <value>]");
+
+            // save shell
+            route.Register(route: "save shell",
+                    action: p => shellController.Save(),
+                    help: "[save shell]");
 
             // read file
             route.Register(route: "read",
