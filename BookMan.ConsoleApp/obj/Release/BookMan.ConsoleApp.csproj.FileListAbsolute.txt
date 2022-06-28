@@ -1,0 +1,16 @@
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Release\BookMan.ConsoleApp.csproj.AssemblyReference.cache
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Release\BookMan.ConsoleApp.csproj.SuggestedBindingRedirects.cache
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Release\BookMan.ConsoleApp.csproj.CoreCompileInputs.cache
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Release\BookMan.ConsoleApp.exe.config
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Release\BookMan.ConsoleApp.exe.manifest
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Release\BookMan.ConsoleApp.application
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Release\BookMan.ConsoleApp.exe
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Release\BookMan.ConsoleApp.pdb
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Release\Newtonsoft.Json.dll
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\bin\Release\Newtonsoft.Json.xml
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Release\BookMan.ConsoleApp.TrustInfo.xml
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Release\BookMan.ConsoleApp.exe.manifest
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Release\BookMan.ConsoleApp.application
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Release\BookMan.ConsoleApp.csproj.CopyComplete
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Release\BookMan.ConsoleApp.exe
+D:\Workspace\c-sharp\BookMan\BookMan.ConsoleApp\obj\Release\BookMan.ConsoleApp.pdb

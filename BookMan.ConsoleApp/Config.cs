@@ -59,5 +59,7 @@ namespace BookMan.ConsoleApp
                 _s.Save();
             }
         }
+
+        public ConsoleColor PromptColor { get; internal set; }
     }
 }

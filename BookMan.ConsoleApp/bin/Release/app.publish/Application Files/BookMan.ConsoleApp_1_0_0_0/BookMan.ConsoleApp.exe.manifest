@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="BookMan.ConsoleApp.exe" version="1.0.0.0" publicKeyToken="fe04956c01162fb3" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="BookMan.ConsoleApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="BookMan.ConsoleApp.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BookMan.ConsoleApp.exe" size="33768">
+      <assemblyIdentity name="BookMan.ConsoleApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>rQ95qGAGhBWim70N1vnNiV8CmV2R8Tlh2Xl3REzk41k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="701992">
+      <assemblyIdentity name="Newtonsoft.Json" version="13.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>tiSUnfiw46YVP9+3MKfG9JkLZZLuDZIuF4hDPSdmEPM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="BookMan.ConsoleApp.exe.config" size="1341">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gvfWQIJv3tZ+k3mxnAqHbYcLme4SoYglo9aZyNr7OOU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on
+           and is designed to work with. Uncomment the appropriate elements
+           and Windows will automatically select the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=DESKTOP-2CDDHUH\Truong" issuerKeyHash="76d5a3e05d01ea61300ad01ae912eaa86fe14f41" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>VQUCdqL3cL7+IV/1Wlu8ZuFvn6UKVgf17V3uHLs9LRE=</DigestValue></Reference></SignedInfo><SignatureValue>FD/tk41mTg/o9VbrmsZKazpm7swNT/RD/aFpab8n22WLI9tfU2JgHWAHIMUAdnIvyEoNLPXs3a9IA2DvByo33Qr4Np0tjKyTnj82/EkQVR40lKntQZYXlsFPiO/eTFcXCRRlNhaaLdTxYP91YeP1DutClVn/vs886ehyYiLEco8=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>oSSkmyeR1MmFEmTnco+iHfa1OheAOwhVCTPnppMx9NmjSV2bezeqAqzRGZ9xBB069QkZ3CjOz03Qk2i6ZPycxpTDMJTGjJdzJSQQnapRR4pp27VOSOBKVJfngzYAgPYlZnJcEbTFxbN7zqtxc7qslfnM9/vWWIG0gZ4/oRBpt0E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="112d3dbb1cee5dedf507560aa59f6fe166bc5b5af55f21febe70f7a276020555" Description="" Url=""><as:assemblyIdentity name="BookMan.ConsoleApp.exe" version="1.0.0.0" publicKeyToken="fe04956c01162fb3" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-2CDDHUH\Truong</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Of0wqwaFg4Zrlx/8ORn3LOus1un8A4FbthnOYUMuVPk=</DigestValue></Reference></SignedInfo><SignatureValue>JhIDKWXO/26AqVsWfCey9b+qSDlPk8RZ6xVOFiVUt0NNdRLEDDfcq8XhGytefm4U1KmniPPFeaBSrUa/HeKQG+meAuPtMdfszm6VXDWIv12gHwihpslisxSB2qxdBKmO4GQQn9Wih5wSdiIqdzn6Q27nrk8PeYVQu0FiHlPVU2E=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>oSSkmyeR1MmFEmTnco+iHfa1OheAOwhVCTPnppMx9NmjSV2bezeqAqzRGZ9xBB069QkZ3CjOz03Qk2i6ZPycxpTDMJTGjJdzJSQQnapRR4pp27VOSOBKVJfngzYAgPYlZnJcEbTFxbN7zqtxc7qslfnM9/vWWIG0gZ4/oRBpt0E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQJjNiLxJKqqdOCQwRNG6bOjANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwARABFAFMASwBUAE8AUAAtADIAQwBEAEQASABVAEgAXABUAHIAdQBvAG4AZzAeFw0yMjA2MjgwNzI3NTFaFw0yMzA2MjgxMzI3NTFaMDcxNTAzBgNVBAMeLABEAEUAUwBLAFQATwBQAC0AMgBDAEQARABIAFUASABcAFQAcgB1AG8AbgBnMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQChJKSbJ5HUyYUSZOdyj6Id9rU6F4A7CFUJM+emkzH02aNJXZt7N6oCrNEZn3EEHTr1CRncKM7PTdCTaLpk/JzGlMMwlMaMl3MlJBCdqlFHimnbtU5I4EpUl+eDNgCA9iVmclwRtMXFs3vOq3FzuqyV+cz3+9ZYgbSBnj+hEGm3QQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAGzjEkDREumBCJPNI+LoThFFjFjTWv0+tlcibfjmTdAEg7LEMlGGnSiBqPiLBlXqBpEzMLxlEa0tZPYxlfsOYgk2eT/dlOkZoS2rXLR3ja1EjgM9yoS39OhjmWHIECRxizbK7ZRESlT95mzV9eCjBcjQOMoQMjJj5UNS3I6zcEwV</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
