@@ -10,7 +10,7 @@ namespace BookMan.ConsoleApp.DataServices
     using Newtonsoft.Json;
     using System.IO;
 
-    public class JsonDataAccess
+    public class JsonDataAccess : IDataAccess
     {
         public List<Book> Books { get; set; } = new List<Book>();
         private readonly string _file = "data.json";

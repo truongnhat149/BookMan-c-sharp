@@ -99,6 +99,12 @@
             route.Register(route: "do clear",
                      action: p => shellController.Clear(true),
                      help: "[clear] Use with care");
+
+            // thống kê
+            route.Register(route: "show stats",
+                    action: p => controller.Stats(),
+                    help: "[show stats]");
+
             // local function to convert parameter to book object
             Book toBook(Parameter parameter)
             {

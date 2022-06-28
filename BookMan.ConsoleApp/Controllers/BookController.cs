@@ -114,5 +114,13 @@ namespace BookMan.ConsoleApp.Controllers
             var view = new BookListView(model);
             Render(view);
         }
+
+        // thống kê
+        public void Stats()
+        {
+            var model = Repo.Stats();
+            var view = new BookStatsView(model);
+            Render(view);
+        }
     }
 }
