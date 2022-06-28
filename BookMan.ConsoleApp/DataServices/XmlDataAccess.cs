@@ -15,7 +15,8 @@ namespace BookMan.ConsoleApp.DataServices
     {
         public List<Book> Books { get; set; } = new List<Book>();
 
-        private readonly string _file = "data.xml";
+        private readonly string _file = Config.Instance.DataFile;
+        //private readonly string _file = "data.xml";
 
         public void Load()
         {

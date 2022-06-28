@@ -8,7 +8,8 @@ namespace BookMan.ConsoleApp.DataServices
     {
         // read write file binary
         public List<Book> Books { get; set; } = new List<Book>();
-        private readonly string _file = "data.dat";
+        private readonly string _file = Config.Instance.DataFile;
+        //private readonly string _file = "data.dat";
         public void Load()
         {   
             if (!File.Exists(_file))

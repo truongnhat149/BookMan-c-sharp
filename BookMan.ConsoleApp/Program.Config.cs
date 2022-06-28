@@ -9,9 +9,10 @@
     {
         private static void ConfigRouter()
         {
-            IDataAccess dataAccess = new BinaryDataAccess();
+            IDataAccess dataAccess = Config.Instance.IDataAccess;
             BookController controller = new BookController(dataAccess);
             ShellController shellController = new ShellController(dataAccess);
+            ConfigController config = new ConfigController();
 
             Router route = Router.Instance;
 
@@ -104,6 +105,23 @@
             route.Register(route: "show stats",
                     action: p => controller.Stats(),
                     help: "[show stats]");
+
+            // config
+            route.Register(route: "config prompt text",
+                    action: p => config.ConfigPromptText(p["text"]),
+                    help: "[Config prompt text ? text = <value>]");
+
+            route.Register(route: "config prompt color",
+                    action: p => config.ConfigPromptColor(p["color"]),
+                    help: "[config prompt color ? color = <value>]");
+
+            route.Register(route: "current data access",
+                    action: p => config.CurrentDataAccess(),
+                    help: "[router data access]");
+
+            route.Register(route: "config data access",
+                    action: p => config.ConfigDataAccess(),
+                    help: "[config data access ? da = <value:json, binary, xml> & file = <value>]");
 
             // local function to convert parameter to book object
             Book toBook(Parameter parameter)
